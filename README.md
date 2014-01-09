@@ -94,7 +94,7 @@ class Admin_faqs extends Admin_streams {
 }
 ```
 
-Finally, edit the module language file, `addons/default/modules/StreamsCRUD/language/english/StreamsCRUD_lang.php`, to include the necessarly language lines per stream, here's and example for the faqs stream
+Finally, edit the module language file, `addons/default/modules/StreamsCRUD/language/english/StreamsCRUD_lang.php`, to include the necessarly language lines per stream, here's and example for the `faqs` stream
 
 ```php
 // FAQs stream
