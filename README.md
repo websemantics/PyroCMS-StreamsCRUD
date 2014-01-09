@@ -10,7 +10,7 @@ To install this module unzip the folder and place it into  `addons/default/modul
 
 ## How to use
 
-Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add more as approperiate. Notice that, `category_select` field is a relationship type. The value of `choose_stream` should be the target stream slug (i.e. categories in this example):
+Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add more as approperiate. Notice that, `category_select` field is a relationship type. The value of `choose_stream` should be the target stream slug (i.e. `categories` in this example):
 
 ```php
 $config ['fields']	= array(
