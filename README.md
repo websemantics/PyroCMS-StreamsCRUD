@@ -10,9 +10,9 @@ To install this module unzip the folder and place it into  `addons/default/modul
 
 ## How to use
 
-Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add as approperiate. Notice that, 'category_select' field is a relationship type. The value of 'choose_stream' should be the target stream slug (i.e. categories in this example):
+Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add as approperiate. Notice that, `category_select` field is a relationship type. The value of `choose_stream` should be the target stream slug (i.e. categories in this example):
 
-
+```php
 $config ['fields']	= array(
 
 	'question'        => array( 'name' => 'Question', 
@@ -31,10 +31,11 @@ $config ['fields']	= array(
 														  																											relationship target stream */
 											 ),
 	);
-
+```
 	
 After all your fields are defined, create the required streams, see below:
 
+```php
 $config ['streams']	= array(
 
 	'faqs' 			=> array('name'    => 'FAQs', 
@@ -58,10 +59,11 @@ $config ['streams']	= array(
 												)
 		)
 );
-
+```
 
 Data can be added to each stream:
 
+```php
 $config ['data']	= array(
 
 'categories' => array(
@@ -75,18 +77,21 @@ $config ['data']	= array(
 	)
 
 );
+```
 
-Notice that, the question 'What is the best green car for 2013?' is linked to the right category using a special reference key 'ref', combined with the target stream slug (categories@ref).
+Notice that, the question `What is the best green car for 2013?` is linked to the right category using a special reference key `ref`, combined with the target stream slug `categories@ref`.
 
-For each new stream added, create a controller in addons/default/modules/StreamsCRUD/controllers, with 'admin_' prefix. For example, 'admin_faqs.php' for the faqs stream. The content of this controller is kept simple:
+For each new stream added, create a controller in `addons/default/modules/StreamsCRUD/controllers`, with `admin_` prefix. For example, `admin_faqs.php` for the `faqs` stream. The content of this controller is kept simple:
 
+```php
 require 'admin_streams.php';
 
 class Admin_faqs extends Admin_streams {
     public $section = 'faqs';
 }
+```
 
-Finally, edit the module language file, addons/default/modules/StreamsCRUD/language/english/ StreamsCRUD_lang.php, to include the necessarly language lines per stream, here's and example for the faqs stream
+Finally, edit the module language file, `addons/default/modules/StreamsCRUD/language/english/StreamsCRUD_lang.php`, to include the necessarly language lines per stream, here's and example for the faqs stream
 
 ```php
 // FAQs stream
