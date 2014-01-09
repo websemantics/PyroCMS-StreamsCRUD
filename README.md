@@ -94,7 +94,7 @@ class Admin_faqs extends Admin_streams {
 }
 ```
 
-Finally, edit the module language file, `addons/default/modules/StreamsCRUD/language/english/StreamsCRUD_lang.php`, to include the necessarly language lines per stream, here's and example for the `faqs` stream
+Edit the module language file, `addons/default/modules/StreamsCRUD/language/english/StreamsCRUD_lang.php`, to include the necessarly language lines per stream, here's and example for the `faqs` stream
 
 ```php
 // FAQs stream
@@ -104,6 +104,13 @@ $lang[MODULE_NAME.':faqs:edit']				= 'Edit FAQ';
 ```
 
 These lines are mandatory per stream.
+
+Finally, edit the routes config file at `addons/default/modules/ee/config/routes.php` and insert routes for new streams as follows:
+
+```php
+$route[MODULE_NAME.'/admin/categories(:any)'] = 'admin_categories$1';
+$route[MODULE_NAME.'/admin/faqs(:any)'] = 'admin_faqs$1';
+```
 
 ## Change Module Name
 
