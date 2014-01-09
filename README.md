@@ -2,15 +2,15 @@
 
 This module makes it easy to take advantage of PyroCMS Streams Core by providing a simple CRUD controller. Streams can be described in a config file along with the fields and assignments. These are going to be created when the module is installed. This module also support Streams data, allowing to list the data values of each stream including for relationship type fields.
 
-This module was written to make it easily modified and customize, including the module name (folder name etc).
+This module was written to make it easily modified and customized, including the module name (folder name etc).
 
 ## Installation
 
-To install this module unzip the folder and place it into  `addons/default/modules`, then name it StreamsCRUD
+To install this module unzip the folder and place it into  `addons/default/modules`, then name it `StreamsCRUD`
 
 ## How to use
 
-Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add as approperiate. Notice that, `category_select` field is a relationship type. The value of `choose_stream` should be the target stream slug (i.e. categories in this example):
+Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add more as approperiate. Notice that, `category_select` field is a relationship type. The value of `choose_stream` should be the target stream slug (i.e. categories in this example):
 
 ```php
 $config ['fields']	= array(
