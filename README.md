@@ -68,12 +68,15 @@ $config ['data']	= array(
 
 'categories' => array(
 		array('category_title' => 'News'),
-		'ref' => array('category_title' => 'Cars'), /* a unique key is used here to mark this row 'ref' */
+		/* a unique key is used here to mark this row 'ref' */
+		'ref' => array('category_title' => 'Cars'), 
 		array('category_title' => 'Music')
 	),
 
 'faqs' => array(
-		array('question' => 'What is the best green car for 2013?','answer' => 'Toyota Avalon Hybrid ', 'category_select' => 'categories@ref'),
+		array('question' => 'What is the best green car for 2013?',
+					'answer' => 'Toyota Avalon Hybrid ', 
+					'category_select' => 'categories@ref'),
 	)
 
 );
