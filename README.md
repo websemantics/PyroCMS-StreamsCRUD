@@ -88,16 +88,18 @@ class Admin_faqs extends Admin_streams {
 
 Finally, edit the module language file, addons/default/modules/StreamsCRUD/language/english/ StreamsCRUD_lang.php, to include the necessarly language lines per stream, here's and example for the faqs stream
 
+```php
 // FAQs stream
 $lang[MODULE_NAME.':faqs']            = 'FAQs';
 $lang[MODULE_NAME.':faqs:new']				= 'New FAQ';
 $lang[MODULE_NAME.':faqs:edit']				= 'Edit FAQ';
+```
 
 These lines are mandatory per stream.
 
 ## Change Module Name
 
-It has been made easy to change the module name in this addon, so that you can use it with your own projects. To do so (for example, change the name to 'MyModule'), follow these steps
+It has been made easy to change the module name in this addon, so that you can use it with your own projects. To do so (for example, change the name to `MyModule`), follow these steps
 
 * Rename the module folder to `MyModule`, `addons/default/modules/MyModule`
 * Rename class `Module_StreamsCRUD` at `addons/default/modules/MyModule/details.php` to `Module_MyModule`
