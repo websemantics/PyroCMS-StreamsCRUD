@@ -10,7 +10,7 @@ To install this module unzip the folder and place it into  `addons/default/modul
 
 ## How to use
 
-Here are the steps you need to create a new stream(s); start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The '$config ['fields']'' array contains all the fields used in your module. Notice that, 'category_select' is a relationship type, the value of 'choose_stream' should be the stream_slug of the target stream (i.e. categories)
+Here are the steps you need to follow to create a new stream(s). Start by editing `addons/default/modules/StreamsCRUD/config/streams.php`. The $config ['fields'] array contains all the fields used in your module, add as approperiate. Notice that, 'category_select' field is a relationship type. The value of 'choose_stream' should be the target stream slug (i.e. categories in this example):
 
 
 $config ['fields']	= array(
@@ -99,10 +99,9 @@ These lines are mandatory per stream.
 
 It has been made easy to change the module name in this addon, so that you can use it with your own projects. To do so (for example, change the name to 'MyModule'), follow these steps
 
-* Rename the module folder to 'MyModule', addons/default/modules/MyModule
-* Rename class Module_StreamsCRUD at addons/default/modules/MyModule/details.php to Module_MyModule
-* Edit file addons/default/modules/MyModule/config/constants.php, replace StreamsCRUD to MyModule
-* Rename the language file at addons/default/modules/MyModule/language/english from StreamsCRUD_lang.php to MyModule_lang.php
-* Rename the front-end controller StreamsCRUD.php at addons/default/modules/MyModule/controllers to 
-MyModule.php, and do the same to the class name
-* Finally, change the module details in addons/default/modules/MyModule/config/config.php
+* Rename the module folder to `MyModule`, `addons/default/modules/MyModule`
+* Rename class `Module_StreamsCRUD` at `addons/default/modules/MyModule/details.php` to `Module_MyModule`
+* Edit the file `addons/default/modules/MyModule/config/constants.php`, replace `StreamsCRUD` to `MyModule`
+* Rename the language file at `addons/default/modules/MyModule/language/english` from `StreamsCRUD_lang.php` to `MyModule_lang.php`
+* Rename the front-end controller `StreamsCRUD.php` at `addons/default/modules/MyModule/controllers` to `MyModule.php`, and do the same to the class name
+* Finally, change the module details in `addons/default/modules/MyModule/config/config.php`
