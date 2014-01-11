@@ -32,6 +32,16 @@ $config ['fields']	= array(
 											 ),
 	);
 ```
+
+You can also link to the core user profile, `profiles`, pages, `def_page_fields` and blogs `blog`
+
+```php
+	'user_id' => array( 'name' => 'User', 
+														  'type' => 'relationship',
+														  'extra' => array('choose_stream' => 'profiles'), 
+											 ),
+
+```
 	
 After all your fields are defined, create the required streams, see below:
 

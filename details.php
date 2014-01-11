@@ -13,7 +13,7 @@
 
 require 'config/constants.php';
 
-class Module_StreamsCRUD extends Module {
+class Module_Ee extends Module {
 
     private $namespace = null;
 
@@ -136,7 +136,13 @@ class Module_StreamsCRUD extends Module {
             if(!is_null($extra) && isset($extra['choose_stream'])){
                 // Replace stream place holder (i.e. stream slug) with the actual stream id
                 foreach ($stream_ids as $stream_slug => $stream_id) {
-                   $extra['choose_stream'] = str_replace($stream_slug , $stream_id, $extra['choose_stream']);
+                    // Special streams
+                    $special_streams = array('profiles'=>3, 'def_page_fields'=>2,'blog'=>1);
+
+                    if(array_key_exists($extra['choose_stream'], $special_streams))
+                        $extra['choose_stream'] = $special_streams[$extra['choose_stream']];
+                    else                        
+                        $extra['choose_stream'] = str_replace($stream_slug , $stream_id, $extra['choose_stream']);
                 }
             }
 
@@ -195,7 +201,6 @@ class Module_StreamsCRUD extends Module {
                }
                // ----------------------------------------------------------
                $ref[$stream_slug][$key] = $this->streams->entries->insert_entry($entry_data,  $stream_slug, $this->namespace);
-               dump($entry_data);
             }
         }
         return true;
