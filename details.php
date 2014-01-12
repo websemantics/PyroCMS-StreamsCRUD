@@ -135,15 +135,14 @@ class Module_Ee extends Module {
             // Process the $extra value for stream_id references (if any)
             if(!is_null($extra) && isset($extra['choose_stream'])){
                 // Replace stream place holder (i.e. stream slug) with the actual stream id
-                foreach ($stream_ids as $stream_slug => $stream_id) {
-                    // Special streams
-                    $special_streams = array('profiles'=>3, 'def_page_fields'=>2,'blog'=>1);
+                // ... find Special streams first
+                $special_streams = array('profiles'=>3, 'def_page_fields'=>2,'blog'=>1);
 
-                    if(array_key_exists($extra['choose_stream'], $special_streams))
-                        $extra['choose_stream'] = $special_streams[$extra['choose_stream']];
-                    else                        
-                        $extra['choose_stream'] = str_replace($stream_slug , $stream_id, $extra['choose_stream']);
-                }
+                if(array_key_exists($extra['choose_stream'], $special_streams))
+                    $extra['choose_stream'] = $special_streams[$extra['choose_stream']];
+                else if(array_key_exists($extra['choose_stream'], $stream_ids ))
+                    $extra['choose_stream'] = $stream_ids[$extra['choose_stream']];
+
             }
 
             if(!$this->streams->fields->add_field(array('name'          => $field['name'],
